@@ -1,6 +1,7 @@
 #include "httplib.h"
 #include "iostream"
 #include "include/AIGCJson.hpp"
+#include "CharacterConverter.h"
 using namespace aigc;
 using namespace std;
 
@@ -24,10 +25,11 @@ int main() {
 
 	string jsonStr = "";
 	JsonHelper::ObjectToJson(person, jsonStr);
-	cout << jsonStr << endl;
+	
 
 	svr.Get("/hi", [&](const httplib::Request&, httplib::Response& res) {
-		res.set_content(jsonStr, "text/plain");
+		cout << jsonStr << endl;
+		res.set_content(GBK_TO_UTF8(jsonStr), "application/json;charset=utf-8");
 	});
 
 	svr.listen("0.0.0.0", 8080);
