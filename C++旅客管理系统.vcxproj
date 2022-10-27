@@ -132,6 +132,11 @@
   <ItemGroup>
     <ClInclude Include="CharacterConverter.h" />
     <ClInclude Include="httplib.h" />
+    <ClInclude Include="lodging.h" />
+    <ClInclude Include="passenger.h" />
+    <ClInclude Include="room.h" />
+    <ClInclude Include="service.h" />
+    <ClInclude Include="traveler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
